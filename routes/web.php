@@ -12,10 +12,8 @@
 */
 
 $db=new Medoo\Medoo(config("medoo"));
-App::instance('db',$db);
 
-Route::get('/', function () {
-    $db=App::make('db'); 
+Route::get('/', function () use ($db){
     return var_dump($db->info());
     //return view('welcome');
 });
