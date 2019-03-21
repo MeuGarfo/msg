@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function (){
-    return view('welcome');
+    $data=[
+        'title'=>'Msg'
+    ];
+    return view('index',$data);
 });
