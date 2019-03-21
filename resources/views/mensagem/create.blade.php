@@ -12,6 +12,15 @@
         <div class="row">
             <div class="offset3 span6 text-center">
                 <h1>{{ $title }}</h1>
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <form action="/" method="post">
                     @csrf
                     <input type="text" class="input-block-level" name="mensagem" placeholder="Digite sua mensagem aqui e clique em enviar">

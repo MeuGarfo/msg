@@ -11,9 +11,5 @@
 |
 */
 
-Route::get('/', function (){
-    $data=[
-        'title'=>'Msg'
-    ];
-    return view('index',$data);
-});
+Route::get('/','Mensagens@create');
+Route::post('/','Mensagens@store');
