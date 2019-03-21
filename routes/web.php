@@ -11,9 +11,6 @@
 |
 */
 
-$db=new Medoo\Medoo(config("medoo"));
-
-Route::get('/', function () use ($db){
-    return var_dump($db->info());
-    //return view('welcome');
+Route::get('/', function (){
+    return view('welcome');
 });
