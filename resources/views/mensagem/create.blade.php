@@ -28,7 +28,7 @@
                         @endif
                         @csrf
                         <label for="mensagem">Digite sua mensagem</label>
-                        <input type="text" class="input-block-level" name="mensagem" id="mensagem">
+                        <input type="text" class="input-block-level" name="mensagem" id="mensagem" maxlength="144">
                         <div class="text-center">
                             <button type="submit" name="button" class="btn btn-large">
                                 Enviar
@@ -36,6 +36,14 @@
                         </div>
                     </fieldset>
                 </form>
+                <hr>
+                @if ($mensagens)
+                @foreach ($mensagens as $mensagem)
+                <p>{{ $mensagem->mensagem }}</p><hr>
+                @endforeach
+                @else
+                <p>Nenhuma mensagem encontrada.</p>
+                @endif
             </div>
         </div>
     </div>
